@@ -373,14 +373,14 @@ public class ReactiveJpaRepositoryFactoryBean<
                         transactionExists.flatMap(
                             b -> {
                               if (b) {
-                                return Mono.error(e);
+                                return Mono.error((Throwable) e);
                               }
                               return session
                                   .flatMap(
                                       s ->
                                           Mono.fromCompletionStage(
                                               s.getReactiveConnection().close()))
-                                  .then(Mono.error(e));
+                                  .then(Mono.error((Throwable) e));
                             })),
             invocation.getMethod().getReturnType());
 

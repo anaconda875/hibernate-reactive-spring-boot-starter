@@ -77,7 +77,7 @@ public class ReactiveJpaRepositoryFactory extends ReactiveRepositoryFactorySuppo
   //            repositoryBaseClass,
   //            "createInstance",
   //            JpaEntityInformation.class,
-  //            MutinyReactiveJpaEntityOperations.class,
+  //            StageReactiveJpaEntityOperations.class,
   //            Stage.SessionFactory.class,
   //            ClassLoader.class))
   //        .map(m -> {
